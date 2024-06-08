@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disciplina</title>
+    <link rel="stylesheet" href="styles_unidades_curiculares.css">
+    <link rel="stylesheet" href="./font-awesome-4.7.0/css/font-awesome.min.css" />
+    <link rel="icon" href="./icons/favicon.png" type="image/x-icon" />
+</head>
+<body onload="setSidebarState()">
+    <header id="header">
+        <div class="logo">
+            <button class="menu-button" onclick="toggleNav()">
+                <span class="menu-icon">☰</span>
+            </button>
+        </div>
+        <nav>
+            <a href="#" id="logout" class="logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+        </nav>
+    </header>
+
+    <div id="sidebar" class="sidebar sidebar-light">
+        <div class="sidebar-header d-flex align-items-center justify-content-center" href="/">
+            <div class="sidebar-brand-icon">
+                <img src="./icons/logo.svg" alt="Logo">
+            </div>
+            <div class="sidebar-brand-text mx-3"><b>PORTAL</b></div>
+        </div>
+        <a href="index.html"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
+        <a href="#"><i class="fa fa-user" aria-hidden="true"></i> Meu perfil</a>
+        <a href="#" class="submenu-toggle"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Estudante</a>
+        <div class="submenu">
+            <a href="unidades-curriculares.html" class="submenu-item active">» Unidades Curriculares</a>
+            <a href="#" class="submenu-item">» Plano</a>
+            <a href="#" class="submenu-item">» Histórico</a>
+            <a href="#" class="submenu-item">» Notas</a>
+            <a href="#" class="submenu-item">» Horário</a>
+            <a href="#" class="submenu-item">» Financeiro</a>
+        </div>
+        <a href="#"><i class="fa fa-envelope" aria-hidden="true"></i> Secretaria Virtual</a>
+    </div>
+
+    <div id="main" class="main-content">
+        
+            <div class="breadcrumb">
+                <ol>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">Estudante</a></li>
+                    <li>Unidades Curriculares</li>
+                </ol>
+            </div>
+            <div class="white-box">
+            <div class="filter-form">
+                <div class="form-group">
+                    <select id="course">
+                        <option>ENGENHARIA INFORMÁTICA E DE COMPUTADORES</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <select id="semester">
+                        <option>1º SEMESTRE 2023-2024</option>
+                    </select>
+                </div>
+                <button class="filter-button">FILTRAR <i class="fa fa-filter"></i></button>
+            </div>
+            <div class="table-container">
+                <table class="curricular-units-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Unidade Curricular</th>
+                            <th>Tipo</th>
+                            <th>Ano</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td> <a href="#"><i class="fa fa-eye" aria-hidden="true"></i></a></td>
+                            <td>FUNDAMENTOS DE TELECOMUNICAÇÕES</td>
+                            <td>DISCIPLINA</td>
+                            <td>3º ANO</td>
+                        </tr>
+                        <tr>
+                            <td> <a href="disciplina.html"><i class="fa fa-eye" aria-hidden="true"></i></a></td>
+                            <td>PROJECTO DE FIM DE CURSO</td>
+                            <td>MONOGRAFIA</td>
+                            <td>4º ANO</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+
+    <script src="scripts.js"></script>
+</body>
+</html>

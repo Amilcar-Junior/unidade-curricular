@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portal Académico da Universidade de Cabo Verde</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="./font-awesome-4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="icon" href="./icons/favicon.png" type="image/x-icon" />
+  </head>
+  <body>
+    <header id="header">
+      <div class="logo">
+        <button class="menu-button" onclick="toggleNav()">
+          <span class="menu-icon">☰</span>
+        </button>
+      </div>
+      <nav>
+        <a href="#" id="logout" class="logout"
+          ><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a
+        >
+      </nav>
+    </header>
+
+    <div id="sidebar" class="sidebar sidebar-light">
+      <div
+        class="sidebar-header d-flex align-items-center justify-content-center"
+        href="/"
+      >
+        <div class="sidebar-brand-icon">
+          <img src="./icons/logo.svg" alt="Logo" />
+        </div>
+        <div class="sidebar-brand-text mx-3"><b>PORTAL</b></div>
+      </div>
+      <a href="index.html"
+        ><i class="fa fa-home" aria-hidden="true"></i> Home</a
+      >
+      <a href="#"><i class="fa fa-user" aria-hidden="true"></i> Meu perfil</a>
+      <a href="#" class="submenu-toggle"
+        ><i class="fa fa-graduation-cap" aria-hidden="true"></i> Estudante</a
+      >
+      <div class="submenu">
+        <a href="unidades-curriculares.html" class="submenu-item"
+          >» Unidades Curriculares</a
+        >
+        <a href="#" class="submenu-item">» Plano</a>
+        <a href="#" class="submenu-item">» Histórico</a>
+        <a href="#" class="submenu-item">» Notas</a>
+        <a href="#" class="submenu-item">» Horário</a>
+        <a href="#" class="submenu-item">» Financeiro</a>
+      </div>
+      <a href="#"
+        ><i class="fa fa-envelope" aria-hidden="true"></i> Secretaria Virtual</a
+      >
+    </div>
+
+    <div id="main" class="main-content">
+      <div class="breadcrumb">
+        <div class="greeting">
+          <p>Ola AMILCAR DA ROSA PINA JÚNIOR!</p>
+        </div>
+        <div class="greeting">
+          <p>Formulário de Feedback dos Estudantes</p>
+        </div>
+      </div>
+      <div class="content-container">
+        <div class="left-box">
+      
+        <div class="profile">
+          <img src="./icons/perfil.jpg" alt="Profile Picture" />
+          <div class="profile-info">
+            <h3>AMILCAR DA ROSA PINA JÚNIOR</h3>
+            <p>
+              Email:
+              <a href="mailto:amilcar.Junior@student.unicv.edu.cv"
+                >amilcar.Junior@student.unicv.edu.cv</a
+              >
+            </p>
+            <p>ID: 115809</p>
+          </div>
+        </div>
+        <div class="welcome">
+          <img src="./icons/portalimg.svg" alt="Welcome Image" />
+          <h3>BEM-VINDO AO PORTAL ACADÊMICO!</h3>
+          <p>Este Portal foi construído a pensar em si!</p>
+        </div>
+      </div>
+      <div class="right-box">
+        <div class="links-uteis">
+          <h2>LINKS ÚTEIS</h2>
+          <ul>
+            <li>
+              <a href="#"
+                ><i class="fa fa-university" aria-hidden="true"></i> Serviços da
+                Universidade</a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><i class="fa fa-graduation-cap" aria-hidden="true"></i>
+                Plataforma E-learning (Moodle)</a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><i class="fa fa-users" aria-hidden="true"></i> Estudantes</a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><i class="fa fa-book" aria-hidden="true"></i> Manual de Apoio
+                ao Estudante</a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><i class="fa fa-chalkboard-teacher" aria-hidden="true"></i>
+                Docentes</a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><i class="fa fa-laptop" aria-hidden="true"></i> Plataforma
+                Eletrónica de Gestão de Investigação</a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><i class="fa fa-file-signature" aria-hidden="true"></i>
+                Candidaturas</a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><i class="fa fa-calendar-alt" aria-hidden="true"></i>
+                Calendário Acadêmico</a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><i class="fa fa-bullhorn" aria-hidden="true"></i> Eventos</a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><i class="fa fa-newspaper" aria-hidden="true"></i> Notícias
+                Uni-CV</a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><i class="fa fa-gavel" aria-hidden="true"></i> Código de
+                conduta</a
+              >
+            </li>
+            <li>
+              <a href="#"
+                ><i class="fa fa-book-open" aria-hidden="true"></i> Manual de
+                apoio ao Docente</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <script src="scripts.js"></script>
+  </body>
+</html>
