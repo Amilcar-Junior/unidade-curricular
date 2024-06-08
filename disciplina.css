@@ -278,3 +278,15 @@ a:hover {
     .sidebar a {font-size: 18px;}
 }
 
+.links a {
+    color: #AB162B;
+}
+
+.nav-link {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 0 5px 0;
+    display: flex;
+    border-bottom: 1px solid #ddd;
+}
+

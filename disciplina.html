@@ -1,122 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Disciplina</title>
-    <link rel="stylesheet" href="disciplina.css">
-    <link rel="stylesheet" href="./font-awesome-4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="disciplina.css" />
+    <link
+      rel="stylesheet"
+      href="./font-awesome-4.7.0/css/font-awesome.min.css"
+    />
     <link rel="icon" href="./icons/favicon.png" type="image/x-icon" />
-</head>
-<body onload="setSidebarState()">
+  </head>
+  <body onload="setSidebarState()">
     <header id="header">
-        <div class="logo">
-            <button class="menu-button" onclick="toggleNav()">
-                <span class="menu-icon">☰</span>
-            </button>
-        </div>
-        <nav>
-            <a href="#" id="logout" class="logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
-        </nav>
+      <div class="logo">
+        <button class="menu-button" onclick="toggleNav()">
+          <span class="menu-icon">☰</span>
+        </button>
+      </div>
+      <nav>
+        <a href="#" id="logout" class="logout"
+          ><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a
+        >
+      </nav>
     </header>
 
     <div id="sidebar" class="sidebar sidebar-light">
-        <div class="sidebar-header d-flex align-items-center justify-content-center" href="/">
-            <div class="sidebar-brand-icon">
-                <img src="./icons/logo.svg" alt="Logo">
-            </div>
-            <div class="sidebar-brand-text mx-3"><b>PORTAL</b></div>
+      <div
+        class="sidebar-header d-flex align-items-center justify-content-center"
+        href="/"
+      >
+        <div class="sidebar-brand-icon">
+          <img src="./icons/logo.svg" alt="Logo" />
         </div>
-        <a href="index.html"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
-        <a href="#"><i class="fa fa-user" aria-hidden="true"></i> Meu perfil</a>
-        <a href="#" class="submenu-toggle"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Estudante</a>
-        <div class="submenu">
-            <a href="unidades-curriculares.html" class="submenu-item active">» Unidades Curriculares</a>
-            <a href="#" class="submenu-item">» Plano</a>
-            <a href="#" class="submenu-item">» Histórico</a>
-            <a href="#" class="submenu-item">» Notas</a>
-            <a href="#" class="submenu-item">» Horário</a>
-            <a href="#" class="submenu-item">» Financeiro</a>
-        </div>
-        <a href="#"><i class="fa fa-envelope" aria-hidden="true"></i> Secretaria Virtual</a>
+        <div class="sidebar-brand-text mx-3"><b>PORTAL</b></div>
+      </div>
+      <a href="index.html"
+        ><i class="fa fa-home" aria-hidden="true"></i> Home</a
+      >
+      <a href="#"><i class="fa fa-user" aria-hidden="true"></i> Meu perfil</a>
+      <a href="#" class="submenu-toggle"
+        ><i class="fa fa-graduation-cap" aria-hidden="true"></i> Estudante</a
+      >
+      <div class="submenu">
+        <a href="unidades-curriculares.html" class="submenu-item active"
+          >» Unidades Curriculares</a
+        >
+        <a href="#" class="submenu-item">» Plano</a>
+        <a href="#" class="submenu-item">» Histórico</a>
+        <a href="#" class="submenu-item">» Notas</a>
+        <a href="#" class="submenu-item">» Horário</a>
+        <a href="#" class="submenu-item">» Financeiro</a>
+      </div>
+      <a href="#"
+        ><i class="fa fa-envelope" aria-hidden="true"></i> Secretaria Virtual</a
+      >
     </div>
 
     <div id="main" class="main-content">
-        <div class="breadcrumb">
-            <ol>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#">Estudante</a></li>
-                <li><a href="unidades-curriculares.html">Unidades Curriculares</a></li>
-                <li>PROJECTO DE FIM DE CURSO</li>
-            </ol>
-        </div>
-        <div class="content-container">
-            <div class="left-box">
-                <div class="white-box">
-                    <ul class="nav nav-tabs">
-                        <li class="nav-item">
-                            <a class="nav-link active" href="#">DASHBOARD</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">SUMÁRIO</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">HORÁRIO</a>
-                        </li>
-                    </ul>
-                    <div class="table-responsive">
-                        <table class="table">
-                            <tbody>
-                                <tr>
-                                    <th>Unidade Curricular</th>
-                                    <td colspan="4">PROJECTO DE FIM DE CURSO</td>
-                                    
-                                </tr>
-                                <tr>
-                                    <th>Tipo de unidade curricular</th>
-                                    <td colspan="2">MONOGRAFIA</td>
-                                    <td colspan="2">8º Semestre</td>
-                                    
-                                </tr>
-                                <tr>
-                                    <th>Curso</th>
-                                    <td colspan="2">ENGENHARIA INFORMÁTICA E DE COMPUTADORES</td>
-                                    <td colspan="2">4º ANO</td>
-                                    
-                                </tr>
-                                <tr>
-                                    <th>Faculdade / Escola</th>
-                                    <td colspan="4">Faculdade de Ciências e Tecnologia</td>
-                                    
-                                </tr>
-                                <tr>
-                                    <th>Carga Horária</th>
-                                    <td>Total 750</td>
-                                    <td>T</td>
-                                    <td>P</td>
-                                    <td>TP</td>
-                                </tr>
-                                <tr>
-                                    <th>E-mail da Turma</th>
-                                    <td colspan="4"></td>
-                                    
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
+      <div class="breadcrumb">
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#">Estudante</a></li>
+          <li>
+            <a href="unidades-curriculares.html">Unidades Curriculares</a>
+          </li>
+          <li>PROJECTO DE FIM DE CURSO</li>
+        </ol>
+      </div>
+      <div class="content-container">
+        <div class="left-box">
+          <div class="white-box">
+            <ul class="nav nav-tabs">
+              <li class="nav-item">
+                <a class="nav-link" href="#"
+                  ><i class="fa fa-tachometer" aria-hidden="true"></i>
+                  DASHBOARD</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"
+                  ><i class="fa fa-check" aria-hidden="true"></i> SUMÁRIO</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"
+                  ><i class="fa fa-calendar-check-o" aria-hidden="true"></i>
+                  HORÁRIO</a
+                >
+              </li>
+            </ul>
+            <div class="table-responsive">
+              <table class="table">
+                <tbody>
+                  <tr>
+                    <td>Unidade Curricular</td>
+                    <td colspan="4">PROJECTO DE FIM DE CURSO</td>
+                  </tr>
+                  <tr>
+                    <td>Tipo de unidade curricular</td>
+                    <td colspan="2">MONOGRAFIA</td>
+                    <td colspan="2">8º Semestre</td>
+                  </tr>
+                  <tr>
+                    <td>Curso</td>
+                    <td colspan="2">
+                      ENGENHARIA INFORMÁTICA E DE COMPUTADORES
+                    </td>
+                    <td colspan="2">4º ANO</td>
+                  </tr>
+                  <tr>
+                    <td>Faculdade / Escola</td>
+                    <td colspan="4">Faculdade de Ciências e Tecnologia</td>
+                  </tr>
+                  <tr>
+                    <td>Carga Horária</td>
+                    <td>Total 750</td>
+                    <td>T</td>
+                    <td>P</td>
+                    <td>TP</td>
+                  </tr>
+                  <tr>
+                    <td>E-mail da Turma</td>
+                    <td colspan="4"></td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
-            <div class="right-box">
-                <div class="white-box">
-                    <h3>LINKS</h3>
-                    <ul>
-                        <li><a href="#">Plano Curricular</a></li>
-                    </ul>
-                </div>
-            </div>
+          </div>
         </div>
+        <div class="right-box">
+          <div class="white-box">
+            <ul class="nav nav-link">
+              <h5>LINKS</h5>
+            </ul>
+            <div class="links">
+              <a href="#"
+                ><i class="fa fa-file-pdf-o" aria-hidden="true"></i> Plano
+                Curricular</a
+              >
+              <br />
+              <a href="#"
+                ><i class="fa fa-file-pdf-o" aria-hidden="true"></i> Unidade
+                Curricular Terminal</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <script src="scripts.js"></script>
-</body>
+  </body>
 </html>
