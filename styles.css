@@ -178,11 +178,14 @@ a:hover {
 }
 
 .greeting {
+    display: flex;
     background-color: #e0f7fa;
     padding-right: 3px;
-    padding-left: 5px;
-    padding-top: 5px;
-    padding-bottom: 3px;
+    padding-left: 15px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1px;
 }
 
 .profile {
@@ -190,8 +193,9 @@ a:hover {
     align-items: center;
     background-color: #fff;
     padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
 }
 
 .profile img {
@@ -210,6 +214,7 @@ a:hover {
     background-color: #fff;
     padding: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
     margin-bottom: 20px;
 }
 
@@ -222,6 +227,8 @@ a:hover {
 .links-uteis {
     background-color: #fff;
     padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
 }
 
 .links-uteis h2 {
