@@ -1,109 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Validação de Submissão</title>
     <link rel="stylesheet" href="styles_terminal.css" />
-    <link
-      rel="stylesheet"
-      href="./font-awesome-4.7.0/css/font-awesome.min.css"
-    />
+    <link rel="stylesheet" href="./font-awesome-4.7.0/css/font-awesome.min.css" />
     <link rel="icon" href="./icons/favicon.png" type="image/x-icon" />
-  </head>
-  <body onload="setSidebarState(); loadData();">
+</head>
+<body onload="initializeForm()">
     <header id="header">
-      <div class="logo">
-        <button class="menu-button" onclick="toggleNav()">
-          <span class="menu-icon">☰</span>
-        </button>
-      </div>
-      <nav>
-        <a href="#" id="logout" class="logout"
-          ><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a
-        >
-      </nav>
+        <div class="logo">
+            <button class="menu-button" onclick="toggleNav()">
+                <span class="menu-icon">☰</span>
+            </button>
+        </div>
+        <nav>
+            <a href="#" id="logout" class="logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+        </nav>
     </header>
 
     <div id="sidebar" class="sidebar sidebar-light">
-      <div
-        class="sidebar-header d-flex align-items-center justify-content-center"
-        href="/"
-      >
-        <div class="sidebar-brand-icon">
-          <img src="./icons/logo.svg" alt="Logo" />
+        <div class="sidebar-header d-flex align-items-center justify-content-center" href="/">
+            <div class="sidebar-brand-icon">
+                <img src="./icons/logo.svg" alt="Logo">
+            </div>
+            <div class="sidebar-brand-text mx-3"><b>PORTAL</b></div>
         </div>
-        <div class="sidebar-brand-text mx-3"><b>PORTAL</b></div>
-      </div>
-      <a href="index.html"
-        ><i class="fa fa-home" aria-hidden="true"></i> Home</a
-      >
-      <a href="#"><i class="fa fa-user" aria-hidden="true"></i> Meu perfil</a>
-      <a href="#" class="submenu-toggle"
-        ><i class="fa fa-graduation-cap" aria-hidden="true"></i> Estudante</a
-      >
-      <div class="submenu">
-        <a href="unidades-curriculares.html" class="submenu-item"
-          >» Unidades Curriculares</a
-        >
-        <a href="#" class="submenu-item">» Plano</a>
-        <a href="#" class="submenu-item">» Histórico</a>
-        <a href="#" class="submenu-item">» Notas</a>
-        <a href="#" class="submenu-item">» Horário</a>
-        <a href="#" class="submenu-item">» Financeiro</a>
-      </div>
-      <a href="#"
-        ><i class="fa fa-envelope" aria-hidden="true"></i> Secretaria Virtual</a
-      >
+        <a href="index.html"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
+        <a href="#"><i class="fa fa-user" aria-hidden="true"></i> Meu perfil</a>
+        <a href="#" class="submenu-toggle"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Estudante</a>
+        <div class="submenu">
+            <a href="unidades-curriculares.html" class="submenu-item">» Unidades Curriculares</a>
+            <a href="#" class="submenu-item">» Plano</a>
+            <a href="#" class="submenu-item">» Histórico</a>
+            <a href="#" class="submenu-item">» Notas</a>
+            <a href="#" class="submenu-item">» Horário</a>
+            <a href="#" class="submenu-item">» Financeiro</a>
+        </div>
+        <a href="#"><i class="fa fa-laptop" aria-hidden="true"></i> Secretaria Virtual</a>
     </div>
 
     <div id="main" class="main-content">
-      <div class="breadcrumb">
-        <ol>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="#">Estudante</a></li>
-          <li>
-            <a href="unidades-curriculares.html">Unidades Curriculares</a>
-          </li>
-          <li>Formulario de Submissão de Unidades Curriculares Terminal</li>
-        </ol>
-      </div>
-      <button class="back-button">
-        <a href="terminal.html"><i class="fa fa-arrow-left"></i> VOLTAR</a>
-      </button>
-      <div class="content-container">
-        <form class="submission-form">
-            <div class="form-group">
-                <label for="data_conclusao">Data Conclusão</label>
-                <input type="text" id="data_conclusao" class="form-control" readonly>
-            </div>
-            <div class="form-group">
-                <label for="tema">Tema</label>
-                <input type="text" id="tema" class="form-control" readonly>
-            </div>
-            <div class="form-group">
-                <label for="orientador">Orientador</label>
-                <input type="text" id="orientador" class="form-control" readonly>
-            </div>
-            <div class="form-group">
-                <label for="coorientador">Coorientador</label>
-                <input type="text" id="coorientador" class="form-control" readonly>
-            </div>
-            <div class="form-group">
-                <label for="observacao">Observação</label>
-                <textarea id="observacao" class="form-control" placeholder="Observação"></textarea>
-            </div>
-            <div class="form-group checkbox-group">
-                <label><input type="checkbox" id="aceito"> Aceito</label>
-                <label><input type="checkbox" id="nao_aceito"> Não Aceito</label>
-            </div>
-            <div class="form-group submit-group">
-                <button type="submit" class="submit-button">SALVAR</button>
-            </div>
-        </form>
-    </div>
+        <div class="breadcrumb">
+            <ol>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Estudante</a></li>
+                <li><a href="unidades-curriculares.html">Unidades Curriculares</a></li>
+                <li>Validação de Submissão</li>
+            </ol>
+        </div>
+        <button class="back-button"><a href="terminal.html"><i class="fa fa-arrow-left"></i> VOLTAR</a></button>
+        <div class="content-container">
+            <form class="submission-form" onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label for="data_conclusao">Data Conclusão</label>
+                    <input type="text" id="data_conclusao" class="form-control" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="tema">Tema</label>
+                    <input type="text" id="tema" class="form-control" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="orientador">Orientador</label>
+                    <input type="text" id="orientador" class="form-control" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="coorientador">Coorientador</label>
+                    <input type="text" id="coorientador" class="form-control" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="observacao">Observação</label>
+                    <textarea id="observacao" class="form-control" placeholder="Observação"></textarea>
+                </div>
+                <div class="form-group checkbox-group">
+                    <label class="checkbox-label"><input type="checkbox" id="aceito"> Aceito</label>
+                    <label class="checkbox-label"><input type="checkbox" id="nao_aceito"> Não Aceito</label>
+                </div>
+                <div class="form-group submit-group">
+                    <button type="submit" class="submit-button">SALVAR</button>
+                </div>
+            </form>
+        </div>
     </div>
 
-    <script src="scripts.js"></script>
-  </body>
+    <!-- Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <p><i class="fa fa-check-circle-o" aria-hidden="true"></i> Submissão Aceita com Sucesso!</p>
+        </div>
+    </div>
+
+    <script src="scriptspublicacao.js"></script>
+</body>
 </html>

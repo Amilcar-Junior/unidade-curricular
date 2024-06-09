@@ -75,19 +75,12 @@ function validateForm() {
 function handleSubmit(event) {
     event.preventDefault(); // Prevent the default form submission
     if (validateForm()) {
-        // Collect the form data
-        const formData = {
-            tema: document.getElementById('tema') ? document.getElementById('tema').value : '',
-            orientador: document.getElementById('orientador') ? document.getElementById('orientador').value : '',
-            coorientador: document.getElementById('coorientador') ? document.getElementById('coorientador').value : '',
-            objetivo: document.getElementById('objetivo') ? document.getElementById('objetivo').value : '',
-            motivacao: document.getElementById('motivacao') ? document.getElementById('motivacao').value : ''
-        };
-        console.log(formData); // Log the form data
-        // Store the form data in localStorage
-        localStorage.setItem('formData', JSON.stringify(formData));
-        // Redirect to the validation page
-        window.location.href = 'validacao_terminal.html';
+        const isAceitoChecked = document.getElementById('aceito')?.checked;
+        if (isAceitoChecked) {
+            showModal(); // Show the modal if "Aceito" is checked
+        } else {
+            alert('Formulário enviado com sucesso!'); // Alert message if "Aceito" is not checked
+        }
     }
 }
 
@@ -144,26 +137,17 @@ function calculateAverage() {
 
 // Função para mostrar o modal
 function showModal() {
-    const modal = document.createElement('div');
-    modal.style.position = 'fixed';
-    modal.style.top = '50%';
-    modal.style.left = '50%';
-    modal.style.transform = 'translate(-50%, -50%)';
-    modal.style.backgroundColor = 'white';
-    modal.style.padding = '20px';
-    modal.style.boxShadow = '0 2px 5px rgba(0, 0, 0, 0.1)';
-    modal.innerHTML = `
-        <h2>Formulário enviado com sucesso</h2>
-        <button onclick="closeModal()">Fechar</button>
-    `;
-    document.body.appendChild(modal);
+    const modal = document.getElementById('successModal');
+    if (modal) {
+        modal.style.display = 'block';
+    }
 }
 
 // Função para fechar o modal
 function closeModal() {
-    const modal = document.querySelector('div[style*="position: fixed"]');
+    const modal = document.getElementById('successModal');
     if (modal) {
-        modal.remove();
+        modal.style.display = 'none';
     }
 }
 
