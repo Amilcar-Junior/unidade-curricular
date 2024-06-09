@@ -1,78 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Accept Terminal</title>
     <link rel="stylesheet" href="styles_terminal.css" />
-    <link rel="stylesheet" href="./font-awesome-4.7.0/css/font-awesome.min.css" />
+    <link
+      rel="stylesheet"
+      href="./font-awesome-4.7.0/css/font-awesome.min.css"
+    />
     <link rel="icon" href="./icons/favicon.png" type="image/x-icon" />
-</head>
-<body onload="setSidebarState()">
+  </head>
+  <body onload="setSidebarState()">
     <header id="header">
-        <div class="logo">
-            <button class="menu-button" onclick="toggleNav()">
-                <span class="menu-icon">☰</span>
-            </button>
-        </div>
-        <nav>
-            <a href="#" id="logout" class="logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
-        </nav>
+      <div class="logo">
+        <button class="menu-button" onclick="toggleNav()">
+          <span class="menu-icon">☰</span>
+        </button>
+      </div>
+      <nav>
+        <a href="#" id="logout" class="logout"
+          ><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a
+        >
+      </nav>
     </header>
 
     <div id="sidebar" class="sidebar sidebar-light">
-        <div class="sidebar-header d-flex align-items-center justify-content-center" href="/">
-            <div class="sidebar-brand-icon">
-                <img src="./icons/logo.svg" alt="Logo">
-            </div>
-            <div class="sidebar-brand-text mx-3"><b>PORTAL</b></div>
+      <div
+        class="sidebar-header d-flex align-items-center justify-content-center"
+        href="/"
+      >
+        <div class="sidebar-brand-icon">
+          <img src="./icons/logo.svg" alt="Logo" />
         </div>
-        <a href="index.html"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
-        <a href="#"><i class="fa fa-user" aria-hidden="true"></i> Meu perfil</a>
-        <a href="#" class="submenu-toggle"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Estudante</a>
-        <div class="submenu">
-            <a href="unidades-curriculares.html" class="submenu-item">» Unidades Curriculares</a>
-            <a href="#" class="submenu-item">» Plano</a>
-            <a href="#" class="submenu-item">» Histórico</a>
-            <a href="#" class="submenu-item">» Notas</a>
-            <a href="#" class="submenu-item">» Horário</a>
-            <a href="#" class="submenu-item">» Financeiro</a>
-        </div>
-        <a href="#"><i class="fa fa-laptop" aria-hidden="true"></i> Secretaria Virtual</a>
+        <div class="sidebar-brand-text mx-3"><b>PORTAL</b></div>
+      </div>
+      <a href="index.html"
+        ><i class="fa fa-home" aria-hidden="true"></i> Home</a
+      >
+      <a href="#"><i class="fa fa-user" aria-hidden="true"></i> Meu perfil</a>
+      <a href="#" class="submenu-toggle"
+        ><i class="fa fa-graduation-cap" aria-hidden="true"></i> Estudante</a
+      >
+      <div class="submenu">
+        <a href="unidades-curriculares.html" class="submenu-item"
+          >» Unidades Curriculares</a
+        >
+        <a href="#" class="submenu-item">» Plano</a>
+        <a href="#" class="submenu-item">» Histórico</a>
+        <a href="#" class="submenu-item">» Notas</a>
+        <a href="#" class="submenu-item">» Horário</a>
+        <a href="#" class="submenu-item">» Financeiro</a>
+      </div>
+      <a href="#"
+        ><i class="fa fa-laptop" aria-hidden="true"></i> Secretaria Virtual</a
+      >
     </div>
 
     <div id="main" class="main-content">
-        <div class="breadcrumb">
-            <ol>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#">Estudante</a></li>
-                <li><a href="unidades-curriculares.html">Unidades Curriculares</a></li>
-                <li>Formulario de Submissão de Unidades Curriculares Terminal</li>
-            </ol>
-        </div>
-        <button class="back-button"><a href="validacao_terminal.html"><i class="fa fa-arrow-left"></i> VOLTAR</a></button>
-        <div class="content-container">
-            <form class="submission-form">
-                <div class="form-group">
-                    <label for="resumo">Resumo</label>
-                    <textarea id="resumo" class="form-control" placeholder="Resumo"></textarea>
-                </div>
-                <div class="form-group">
-                    <label for="abstract">Abstract</label>
-                    <textarea id="abstract" class="form-control" placeholder="Abstract"></textarea>
-                </div>
-                <div class="form-group file-group">
-                    
-                    <input type="file" id="pdf" class="form-control file-input" placeholder="pdf">
-                    <button type="button" class="upload-button" onclick="document.getElementById('pdf').click();"><i class="fa fa-file-pdf-o" aria-hidden="true"></i> ENVIAR PDF</button>
-                </div>
-                <div class="form-group submit-group">
-                    <button type="submit" class="submit-button"><a href="nota_terminal.html">SALVAR</a></button>
-                </div>
-            </form>
-        </div>
+      <div class="breadcrumb">
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#">Estudante</a></li>
+          <li>
+            <a href="unidades-curriculares.html">Unidades Curriculares</a>
+          </li>
+          <li>Formulario de Submissão de Unidades Curriculares Terminal</li>
+        </ol>
+      </div>
+      <button class="back-button">
+        <a href="validacao_terminal.html"
+          ><i class="fa fa-arrow-left"></i> VOLTAR</a
+        >
+      </button>
+      <div class="content-container">
+        <form class="submission-form" onsubmit="handleSubmit(event)">
+          <div class="form-group">
+            <label for="resumo">Resumo</label>
+            <textarea
+              id="resumo"
+              class="form-control"
+              placeholder="Resumo"
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <label for="abstract">Abstract</label>
+            <textarea
+              id="abstract"
+              class="form-control"
+              placeholder="Abstract"
+            ></textarea>
+          </div>
+          <div class="form-group file-group">
+            <input
+              type="file"
+              id="pdf"
+              class="form-control file-input"
+              placeholder="pdf"
+              accept="application/pdf"
+            />
+            <button
+              type="button"
+              class="upload-button"
+              onclick="document.getElementById('pdf').click();"
+            >
+              <i class="fa fa-file-pdf-o" aria-hidden="true"></i> ENVIAR PDF
+            </button>
+          </div>
+          <div class="form-group submit-group">
+            <button type="submit" class="submit-button">SALVAR</button>
+          </div>
+        </form>
+      </div>
     </div>
 
-    <script src="scripts.js"></script>
-</body>
+    <script src="script2.js"></script>
+  </body>
 </html>
+
+<script>
+  function handleSubmit(event) {
+    event.preventDefault(); // Prevent the default form submission
+    if (validateForm()) {
+      event.preventDefault();
+
+      const resumo = document.getElementById("resumo").value;
+      const abstract = document.getElementById("abstract").value;
+      const pdf = document.getElementById("pdf").files[0];
+
+      const reader = new FileReader();
+      reader.onload = function (event) {
+        const pdfBase64 = event.target.result;
+        const formDatas = {
+          resumo,
+          abstract,
+          pdfBase64,
+        };
+
+        localStorage.setItem("formDatas", JSON.stringify(formDatas));
+        window.location.href = "avaliacao_relatorio.html";
+      };
+      if (pdf) {
+        reader.readAsDataURL(pdf);
+      } else {
+        const formDatas = {
+          resumo,
+          abstract,
+          pdfBase64: null,
+        };
+
+        localStorage.setItem("formDatas", JSON.stringify(formDatas));
+        window.location.href = "avaliacao_relatorio.html";
+      }
+    }
+  }
+  // Função para carregar dados do localStorage
+  function loadData() {
+    const formData = JSON.parse(localStorage.getItem("formData"));
+    if (formData) {
+      if (document.getElementById("tema"))
+        document.getElementById("tema").value = formData.tema;
+      if (document.getElementById("orientador"))
+        document.getElementById("orientador").value = formData.orientador;
+      if (document.getElementById("coorientador"))
+        document.getElementById("coorientador").value = formData.coorientador;
+      if (document.getElementById("objetivo"))
+        document.getElementById("objetivo").value = formData.objetivo;
+      if (document.getElementById("motivacao"))
+        document.getElementById("motivacao").value = formData.motivacao;
+    }
+  }
+
+  // Função para inicializar o formulário
+  function initializeForm() {
+    setSidebarState();
+    loadData();
+  }
+
+  // Define o estado do sidebar ao carregar a página
+  window.onload = initializeForm;
+</script>

@@ -1,110 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Validação de Submissão</title>
     <link rel="stylesheet" href="styles_terminal.css" />
-    <link
-      rel="stylesheet"
-      href="./font-awesome-4.7.0/css/font-awesome.min.css"
-    />
+    <link rel="stylesheet" href="./font-awesome-4.7.0/css/font-awesome.min.css" />
     <link rel="icon" href="./icons/favicon.png" type="image/x-icon" />
-  </head>
-  <body onload="setSidebarState(); loadData();">
+</head>
+<body onload="setSidebarState(); loadData();">
     <header id="header">
-      <div class="logo">
-        <button class="menu-button" onclick="toggleNav()">
-          <span class="menu-icon">☰</span>
-        </button>
-      </div>
-      <nav>
-        <a href="#" id="logout" class="logout"
-          ><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a
-        >
-      </nav>
+        <div class="logo">
+            <button class="menu-button" onclick="toggleNav()">
+                <span class="menu-icon">☰</span>
+            </button>
+        </div>
+        <nav>
+            <a href="#" id="logout" class="logout"><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a>
+        </nav>
     </header>
 
     <div id="sidebar" class="sidebar sidebar-light">
-      <div
-        class="sidebar-header d-flex align-items-center justify-content-center"
-        href="/"
-      >
-        <div class="sidebar-brand-icon">
-          <img src="./icons/logo.svg" alt="Logo" />
+        <div class="sidebar-header d-flex align-items-center justify-content-center" href="/">
+            <div class="sidebar-brand-icon">
+                <img src="./icons/logo.svg" alt="Logo">
+            </div>
+            <div class="sidebar-brand-text mx-3"><b>PORTAL</b></div>
         </div>
-        <div class="sidebar-brand-text mx-3"><b>PORTAL</b></div>
-      </div>
-      <a href="index.html"
-        ><i class="fa fa-home" aria-hidden="true"></i> Home</a
-      >
-      <a href="#"><i class="fa fa-user" aria-hidden="true"></i> Meu perfil</a>
-      <a href="#" class="submenu-toggle"
-        ><i class="fa fa-graduation-cap" aria-hidden="true"></i> Estudante</a
-      >
-      <div class="submenu">
-        <a href="unidades-curriculares.html" class="submenu-item"
-          >» Unidades Curriculares</a
-        >
-        <a href="#" class="submenu-item">» Plano</a>
-        <a href="#" class="submenu-item">» Histórico</a>
-        <a href="#" class="submenu-item">» Notas</a>
-        <a href="#" class="submenu-item">» Horário</a>
-        <a href="#" class="submenu-item">» Financeiro</a>
-      </div>
-      <a href="#"
-        ><i class="fa fa-laptop" aria-hidden="true"></i> Secretaria Virtual</a
-      >
+        <a href="index.html"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
+        <a href="#"><i class="fa fa-user" aria-hidden="true"></i> Meu perfil</a>
+        <a href="#" class="submenu-toggle"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Estudante</a>
+        <div class="submenu">
+            <a href="unidades-curriculares.html" class="submenu-item">» Unidades Curriculares</a>
+            <a href="#" class="submenu-item">» Plano</a>
+            <a href="#" class="submenu-item">» Histórico</a>
+            <a href="#" class="submenu-item">» Notas</a>
+            <a href="#" class="submenu-item">» Horário</a>
+            <a href="#" class="submenu-item">» Financeiro</a>
+        </div>
+        <a href="#"><i class="fa fa-laptop" aria-hidden="true"></i> Secretaria Virtual</a>
     </div>
 
     <div id="main" class="main-content">
-      <div class="breadcrumb">
-        <ol>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="#">Estudante</a></li>
-          <li>
-            <a href="unidades-curriculares.html">Unidades Curriculares</a>
-          </li>
-          <li>Formulario de Submissão de Unidades Curriculares Terminal</li>
-        </ol>
-      </div>
-      <button class="back-button">
-        <a href="terminal.html"><i class="fa fa-arrow-left"></i> VOLTAR</a>
-      </button>
-      <div class="content-container">
-        <form class="submission-form">
-          <div class="form-group">
-              <label for="contextualizacao">Contextualização</label>
-              <input type="text" id="contextualizacao" class="form-control" />
-          </div>
-          <div class="form-group">
-              <label for="relatorio">Relatório</label>
-              <input type="text" id="relatorio" class="form-control" />
-          </div>
-          <div class="form-group">
-              <label for="relevancia">Relevância</label>
-              <input type="text" id="relevancia" class="form-control" />
-          </div>
-          <div class="form-group">
-              <label for="apresentacao">Apresentação</label>
-              <input type="text" id="apresentacao" class="form-control" />
-          </div>
-          <div class="form-group">
-              <label for="consideracoes_finais">Considerações Finais</label>
-              <input type="text" id="consideracoes_finais" class="form-control" />
-          </div>
-          <div class="form-group">
-              <label for="nota_final">Nota Final</label>
-              <input type="text" id="nota_final" class="form-control" readonly />
-          </div>
-          <div class="form-group submit-group-validacao">
-              <button type="button" class="submit-button-reprovado">Nota Condicionada</button>
-              <button type="button" class="submit-button"><a href="publicacao_terminal.html">Aprovado</a></button>
-          </div>
-      </form>
-      </div>
+        <div class="breadcrumb">
+            <ol>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Estudante</a></li>
+                <li><a href="unidades-curriculares.html">Unidades Curriculares</a></li>
+                <li>Validação de Submissão</li>
+            </ol>
+        </div>
+        <button class="back-button">
+            <a href="jure_terminal.html"><i class="fa fa-arrow-left"></i> VOLTAR</a>
+        </button>
+        <div class="content-container">
+            <form class="submission-form" onsubmit="handleSubmit(event)">
+                <div class="form-group">
+                    <label for="contextualizacao">Contextualização</label>
+                    <input type="number" id="contextualizacao" class="form-control" min="0" max="20" oninput="validateAndCalculate()">
+                </div>
+                <div class="form-group">
+                    <label for="relatorio">Relatório</label>
+                    <input type="number" id="relatorio" class="form-control" min="0" max="20" oninput="validateAndCalculate()">
+                </div>
+                <div class="form-group">
+                    <label for="relevancia">Relevância</label>
+                    <input type="number" id="relevancia" class="form-control" min="0" max="20" oninput="validateAndCalculate()">
+                </div>
+                <div class="form-group">
+                    <label for="apresentacao">Apresentação</label>
+                    <input type="number" id="apresentacao" class="form-control" min="0" max="20" oninput="validateAndCalculate()">
+                </div>
+                <div class="form-group">
+                    <label for="consideracoes_finais">Considerações Finais</label>
+                    <input type="number" id="consideracoes_finais" class="form-control" min="0" max="20" oninput="validateAndCalculate()">
+                </div>
+                <div class="form-group">
+                    <label for="nota_final">Nota Final</label>
+                    <input type="text" id="nota_final" class="form-control" readonly>
+                </div>
+                <div class="form-group submit-group-validacao">
+                    <button type="button" class="submit-button-reprovado">Nota Condicionada</button>
+                    <button type="submit" class="submit-button">Aprovado</button>
+                </div>
+            </form>
+        </div>
     </div>
 
     <script src="scripts.js"></script>
-  </body>
+    <script>
+        function loadData() {
+            const formData = JSON.parse(localStorage.getItem("formData"));
+            if (formData) {
+                if (document.getElementById("tema"))
+                    document.getElementById("tema").value = formData.tema;
+                if (document.getElementById("orientador"))
+                    document.getElementById("orientador").value = formData.orientador;
+                if (document.getElementById("coorientador"))
+                    document.getElementById("coorientador").value = formData.coorientador;
+                if (document.getElementById("objetivo"))
+                    document.getElementById("objetivo").value = formData.objetivo;
+                if (document.getElementById("motivacao"))
+                    document.getElementById("motivacao").value = formData.motivacao;
+            }
+        }
+
+        function handleSubmit(event) {
+            event.preventDefault(); // Prevent the default form submission
+            if (validateForm()) {
+                window.location.href = "publicacao_terminal.html";
+            }
+        }
+
+        // Função para calcular a média
+        function calculateAverage() {
+            const contextualizacao = parseFloat(document.getElementById('contextualizacao').value) || 0;
+            const relatorio = parseFloat(document.getElementById('relatorio').value) || 0;
+            const relevancia = parseFloat(document.getElementById('relevancia').value) || 0;
+            const apresentacao = parseFloat(document.getElementById('apresentacao').value) || 0;
+            const consideracoesFinais = parseFloat(document.getElementById('consideracoes_finais').value) || 0;
+
+            const sum = contextualizacao + relatorio + relevancia + apresentacao + consideracoesFinais;
+            const average = sum / 5;
+
+            document.getElementById('nota_final').value = average.toFixed(2);
+        }
+
+        // Função para validar e calcular a média
+        function validateAndCalculate() {
+            const inputs = ['contextualizacao', 'relatorio', 'relevancia', 'apresentacao', 'consideracoes_finais'];
+            inputs.forEach(id => {
+                const input = document.getElementById(id);
+                if (input.value < 0) input.value = 0;
+                if (input.value > 20) input.value = 20;
+            });
+            calculateAverage();
+        }
+
+        // Função para inicializar o formulário
+        function initializeForm() {
+            setSidebarState();
+            loadData();
+        }
+
+        // Define o estado do sidebar ao carregar a página
+        window.onload = initializeForm;
+    </script>
+</body>
 </html>

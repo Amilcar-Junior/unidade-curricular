@@ -76,10 +76,11 @@ function handleSubmit(event) {
     event.preventDefault(); // Prevent the default form submission
     if (validateForm()) {
         const isAceitoChecked = document.getElementById('aceito')?.checked;
+        const isReprovateChecked = document.getElementById('nao_aceito')?.checked;
         if (isAceitoChecked) {
             showModal(); // Show the modal if "Aceito" is checked
-        } else {
-            alert('Formulário enviado com sucesso!'); // Alert message if "Aceito" is not checked
+        } if (isReprovateChecked) {
+            showModal2(); // Show the modal if "Aceito" is checked
         }
     }
 }
@@ -148,6 +149,23 @@ function closeModal() {
     const modal = document.getElementById('successModal');
     if (modal) {
         modal.style.display = 'none';
+        window.location.href = "index.html";
+    }
+}
+// Função para mostrar o modal
+function showModal2() {
+    const modal = document.getElementById('errorModal');
+    if (modal) {
+        modal.style.display = 'block';
+    }
+}
+
+// Função para fechar o modal
+function closeModal2() {
+    const modal = document.getElementById('errorModal');
+    if (modal) {
+        modal.style.display = 'none';
+        window.location.href = "index.html";
     }
 }
 

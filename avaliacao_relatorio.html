@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Avaliação Relatório</title>
+    <link rel="stylesheet" href="styles_terminal.css" />
+    <link
+      rel="stylesheet"
+      href="./font-awesome-4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="icon" href="./icons/favicon.png" type="image/x-icon" />
+  </head>
+  <body onload="setSidebarState(); loadFormData();">
+    <header id="header">
+      <div class="logo">
+        <button class="menu-button" onclick="toggleNav()">
+          <span class="menu-icon">☰</span>
+        </button>
+      </div>
+      <nav>
+        <a href="#" id="logout" class="logout"
+          ><i class="fa fa-sign-out" aria-hidden="true"></i> Logout</a
+        >
+      </nav>
+    </header>
+
+    <div id="sidebar" class="sidebar sidebar-light">
+      <div
+        class="sidebar-header d-flex align-items-center justify-content-center"
+        href="/"
+      >
+        <div class="sidebar-brand-icon">
+          <img src="./icons/logo.svg" alt="Logo" />
+        </div>
+        <div class="sidebar-brand-text mx-3"><b>PORTAL</b></div>
+      </div>
+      <a href="index.html"
+        ><i class="fa fa-home" aria-hidden="true"></i> Home</a
+      >
+      <a href="#"><i class="fa fa-user" aria-hidden="true"></i> Meu perfil</a>
+      <a href="#" class="submenu-toggle"
+        ><i class="fa fa-graduation-cap" aria-hidden="true"></i> Estudante</a
+      >
+      <div class="submenu">
+        <a href="unidades-curriculares.html" class="submenu-item"
+          >» Unidades Curriculares</a
+        >
+        <a href="#" class="submenu-item">» Plano</a>
+        <a href="#" class="submenu-item">» Histórico</a>
+        <a href="#" class="submenu-item">» Notas</a>
+        <a href="#" class="submenu-item">» Horário</a>
+        <a href="#" class="submenu-item">» Financeiro</a>
+      </div>
+      <a href="#"
+        ><i class="fa fa-laptop" aria-hidden="true"></i> Secretaria Virtual</a
+      >
+    </div>
+
+    <div id="main" class="main-content">
+      <div class="breadcrumb">
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#">Estudante</a></li>
+          <li>
+            <a href="unidades-curriculares.html">Unidades Curriculares</a>
+          </li>
+          <li>Avaliação Relatório</li>
+        </ol>
+      </div>
+      <button class="back-button">
+        <a href="accepted_terminal.html"
+          ><i class="fa fa-arrow-left"></i> VOLTAR</a
+        >
+      </button>
+      <div class="content-container">
+        <form class="submission-form" onsubmit="handleSubmit(event)">
+          <div class="form-group">
+            <label for="resumo">Resumo</label>
+            <textarea id="resumo" class="form-control" readonly></textarea>
+          </div>
+          <div class="form-group">
+            <label for="abstract">Abstract</label>
+            <textarea id="abstract" class="form-control" readonly></textarea>
+          </div>
+          <div class="form-group file-group">
+            <button type="button" class="upload-button">
+              <a id="pdfLink" href="#" target="_blank"
+                ><i class="fa fa-file-pdf-o" aria-hidden="true"></i> Ver PDF</a
+              >
+            </button>
+          </div>
+          <div class="form-group submit-group-validacao">
+            <button type="button" class="submit-button-reprovado">
+              REPROVAR
+            </button>
+            <button
+              type="button"
+              class="submit-button"
+              onclick="redirectToJuriTerminal()"
+            >
+              APROVAR
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="script2.js"></script>
+    <script>
+      function loadFormData() {
+        const formDatas = JSON.parse(localStorage.getItem("formDatas"));
+
+        if (formDatas) {
+          document.getElementById("resumo").value = formDatas.resumo;
+          document.getElementById("abstract").value = formDatas.abstract;
+
+          if (formDatas.pdfBase64) {
+            const pdfLink = document.getElementById("pdfLink");
+            pdfLink.href = formDatas.pdfBase64;
+            pdfLink.download = "document.pdf"; // Para baixar o PDF ao invés de abrir em nova aba
+          }
+        }
+      }
+
+      function redirectToJuriTerminal() {
+        window.location.href = "jure_terminal.html";
+      }
+
+      function handleSubmit(event) {
+        event.preventDefault();
+        alert("Formulário enviado!");
+      }
+      // Função para carregar dados do localStorage
+      function loadData() {
+        const formData = JSON.parse(localStorage.getItem("formData"));
+        if (formData) {
+          if (document.getElementById("tema"))
+            document.getElementById("tema").value = formData.tema;
+          if (document.getElementById("orientador"))
+            document.getElementById("orientador").value = formData.orientador;
+          if (document.getElementById("coorientador"))
+            document.getElementById("coorientador").value =
+              formData.coorientador;
+          if (document.getElementById("objetivo"))
+            document.getElementById("objetivo").value = formData.objetivo;
+          if (document.getElementById("motivacao"))
+            document.getElementById("motivacao").value = formData.motivacao;
+        }
+      }
+
+      // Função para inicializar o formulário
+      function initializeForm() {
+        setSidebarState();
+        loadData();
+        loadFormData();
+      }
+
+      // Define o estado do sidebar ao carregar a página
+      window.onload = initializeForm;
+    </script>
+  </body>
+</html>

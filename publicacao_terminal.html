@@ -50,7 +50,7 @@
                 <li>Validação de Submissão</li>
             </ol>
         </div>
-        <button class="back-button"><a href="terminal.html"><i class="fa fa-arrow-left"></i> VOLTAR</a></button>
+        <button class="back-button"><a href="nota_terminal.html"><i class="fa fa-arrow-left"></i> VOLTAR</a></button>
         <div class="content-container">
             <form class="submission-form" onsubmit="handleSubmit(event)">
                 <div class="form-group">
@@ -88,10 +88,53 @@
     <div id="successModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeModal()">&times;</span>
-            <p><i class="fa fa-check-circle-o" aria-hidden="true"></i> Submissão Aceita com Sucesso!</p>
+            <p><i class="fa fa-check-circle-o" aria-hidden="true"></i> Publicada com Sucesso!</p>
+        </div>
+    </div>
+    <div id="errorModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <p><i class="fa fa-times-circle-o" aria-hidden="true"></i> Publicação rejeitada Sucesso!</p>
         </div>
     </div>
 
     <script src="scriptspublicacao.js"></script>
 </body>
 </html>
+<script>
+    function loadData() {
+      const formData = JSON.parse(localStorage.getItem("formData"));
+      if (formData) {
+        if (document.getElementById("tema"))
+          document.getElementById("tema").value = formData.tema;
+        if (document.getElementById("orientador"))
+          document.getElementById("orientador").value = formData.orientador;
+        if (document.getElementById("coorientador"))
+          document.getElementById("coorientador").value = formData.coorientador;
+        if (document.getElementById("objetivo"))
+          document.getElementById("objetivo").value = formData.objetivo;
+        if (document.getElementById("motivacao"))
+          document.getElementById("motivacao").value = formData.motivacao;
+      }
+      
+    console.log(formData)
+    }
+  
+// Função para definir a data atual
+function setDate() {
+    const dateElement = document.getElementById('data_conclusao');
+    if (dateElement) {
+        const today = new Date().toISOString().split('T')[0];
+        dateElement.value = today;
+    }
+}
+    // Função para inicializar o formulário
+    function initializeForm() {
+      setSidebarState();
+      loadData();
+      setDate();
+    }
+  
+    // Define o estado do sidebar ao carregar a página
+    window.onload = initializeForm;
+  </script>
